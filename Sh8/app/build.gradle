@@ -4,8 +4,8 @@ android {
     compileSdkVersion 24
     buildToolsVersion "24.0.0"
     defaultConfig {
-        applicationId "com.example.hyunji.sh8"
-        minSdkVersion 15
+        applicationId "org.triplepy.sh8email.sh8"
+        minSdkVersion 16
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"

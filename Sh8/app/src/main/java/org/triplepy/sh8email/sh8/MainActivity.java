@@ -1,9 +1,7 @@
-package com.example.hyunji.sh8;
+package org.triplepy.sh8email.sh8;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-//First hyundeeee
 
 public class MainActivity extends AppCompatActivity {
 
