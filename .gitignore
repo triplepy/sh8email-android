@@ -42,3 +42,4 @@ captures/
 gradle/
 gradlew
 gradlew.bat
+app/libs/

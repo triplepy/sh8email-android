@@ -20,7 +20,7 @@
             android:layout_alignParentTop="true"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:text="테스트 이름" />
+            android:text="텍스트 이름" />
 
         <TextView
             android:id="@+id/t_job"
