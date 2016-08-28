@@ -1,12 +1,14 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+    ext.kotlin_version = '1.0.3'
     repositories {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.0-alpha7'
-
+        classpath 'com.android.tools.build:gradle:2.2.0-beta1'
+        classpath 'me.tatarka:gradle-retrolambda:3.2.5'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -16,11 +18,6 @@ allprojects {
     repositories {
         jcenter()
     }
-}
-ext {
-    travisBuild = System.getenv("TRAVIS") == "true"
-    // allows for -Dpre-dex=false to be set
-    preDexEnabled = "true".equals(System.getProperty("pre-dex", "true"))
 }
 
 task clean(type: Delete) {
