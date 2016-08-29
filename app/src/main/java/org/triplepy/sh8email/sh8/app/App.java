@@ -28,4 +28,6 @@ public class App extends Application {
     public ClientComponent getClientComponent() {
         return clientComponent;
     }
+
+
 }
