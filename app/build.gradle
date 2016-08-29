@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 apply plugin: 'me.tatarka.retrolambda'
 
 def version = [
@@ -35,6 +36,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
 }
 
 dependencies {
@@ -70,4 +74,8 @@ dependencies {
 
 
     testCompile 'junit:junit:4.12'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }
