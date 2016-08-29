@@ -8,5 +8,8 @@ android:
     - extra-android-support
     - extra-android-m2repository
 
+jdk:
+  - oraclejdk8
+
 script:
   - ./gradlew clean build
