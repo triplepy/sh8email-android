@@ -1,5 +1,9 @@
 language: android
 sudo: required
+
+notifications:
+  slack: sh8email:rBado1dlM9CHy9nlUlWwfTN0
+
 android:
   components:
     - build-tools-22.0.1
@@ -16,6 +20,7 @@ env:
 
 jdk:
   - oraclejdk8
+
 
 script:
   - ./gradlew clean build
