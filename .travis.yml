@@ -1,17 +1,17 @@
 language: android
+sudo: required
 android:
   components:
-    - tools
-    - build-tools-24.0.1
-    - android-24
-    - platform-tools
+    - build-tools-22.0.1
+    - android-23
     - extra-android-support
     - extra-android-m2repository
 
   licenses:
-    - 'android-sdk-preview-license-52d11cd2'
-    - 'android-sdk-license-.+'
-    - 'google-gdk-license-.+'
+    - android-sdk-license-5be876d5
+
+env:
+    - GRADLE_OPTS="-XX:MaxPermSize=4096M" CI=true
 
 jdk:
   - oraclejdk8
