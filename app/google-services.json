@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "555926696247",
+    "firebase_url": "https://sh8email-android-637cd.firebaseio.com",
+    "project_id": "sh8email-android-637cd",
+    "storage_bucket": "sh8email-android-637cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555926696247:android:8f19b5cfbce9bfd9",
+        "android_client_info": {
+          "package_name": "org.triplepy.sh8email.sh8"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "555926696247-q1if2vjrj8lfkjnq4ad7bg9eheff5ht3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.triplepy.sh8email.sh8",
+            "certificate_hash": "FFC587E20C35D153A1DED6D84FFC90BE830C4472"
+          }
+        },
+        {
+          "client_id": "555926696247-sd8sejsug2a8p3am4upb177n5c9ab12d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBU5LgWZdX2qiTaQ8y3FMettp1Tehz75s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "555926696247-sd8sejsug2a8p3am4upb177n5c9ab12d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
