@@ -1,8 +1,20 @@
 language: android
+sudo: required
 android:
   components:
-    - build-tools-23.0.2
+    - build-tools-22.0.1
     - android-23
+    - extra-android-support
+    - extra-android-m2repository
+
+  licenses:
+    - android-sdk-license-5be876d5
+
+env:
+    - GRADLE_OPTS="-XX:MaxPermSize=4096M" CI=true
+
+jdk:
+  - oraclejdk8
 
 script:
   - ./gradlew clean build

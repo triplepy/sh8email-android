@@ -39,7 +39,4 @@ captures/
 # Keystore files
 *.jks
 .idea/
-gradle/
-gradlew
-gradlew.bat
 app/libs/
