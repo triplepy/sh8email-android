@@ -2,9 +2,13 @@ package org.triplepy.sh8email.sh8.app;
 
 import android.app.Application;
 
+import com.crashlytics.android.Crashlytics;
+
 import org.triplepy.sh8email.sh8.di.component.ClientComponent;
 import org.triplepy.sh8email.sh8.di.component.DaggerClientComponent;
 import org.triplepy.sh8email.sh8.di.module.ClientModule;
+
+import io.fabric.sdk.android.Fabric;
 
 /**
  * The sh8email-android Project.
@@ -20,6 +24,8 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Fabric.with(this, new Crashlytics());
+
         clientComponent = DaggerClientComponent.builder()
                 .clientModule(new ClientModule())
                 .build();
@@ -28,6 +34,4 @@ public class App extends Application {
     public ClientComponent getClientComponent() {
         return clientComponent;
     }
-
-
 }
