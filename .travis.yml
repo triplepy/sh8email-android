@@ -1,11 +1,16 @@
 language: android
 sudo: required
+
+notifications:
+  slack: sh8email:rBado1dlM9CHy9nlUlWwfTN0
+
 android:
   components:
     - build-tools-22.0.1
     - android-23
     - extra-android-support
     - extra-android-m2repository
+    - extra-google-google_play_services
 
   licenses:
     - android-sdk-license-5be876d5
@@ -15,6 +20,7 @@ env:
 
 jdk:
   - oraclejdk8
+
 
 script:
   - ./gradlew clean build
