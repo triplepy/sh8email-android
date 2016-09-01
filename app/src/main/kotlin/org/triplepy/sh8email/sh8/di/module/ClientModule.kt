@@ -1,7 +1,5 @@
 package org.triplepy.sh8email.sh8.di.module
 
-import android.util.Log
-import com.crashlytics.android.Crashlytics
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -22,7 +20,6 @@ class ClientModule {
     fun provideOkHttpClient(): OkHttpClient {
         val logging = HttpLoggingInterceptor()
         logging.level = HttpLoggingInterceptor.Level.BODY
-        Crashlytics.log(Log.ERROR, "ClientModule >> ", logging.level.toString());
         return OkHttpClient.Builder().addInterceptor(logging).build()
     }
 

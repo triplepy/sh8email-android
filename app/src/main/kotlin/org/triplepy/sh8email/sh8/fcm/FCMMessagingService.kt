@@ -1,11 +1,8 @@
 package org.triplepy.sh8email.sh8.fcm
 
 import android.util.Log
-import com.crashlytics.android.Crashlytics
-
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
-
 import org.triplepy.sh8email.sh8.utils.NotificationUtil
 
 /**
@@ -21,7 +18,6 @@ class FCMMessagingService : FirebaseMessagingService() {
         super.onMessageReceived(remoteMessage)
 
         Log.d("FCMService", "Message Delivered!")
-        Crashlytics.log(Log.ERROR, "FCMService >> ","Message Delivered!");
         val notification = remoteMessage?.notification
         NotificationUtil.sendNotification(this, notification?.title, notification?.body)
     }
