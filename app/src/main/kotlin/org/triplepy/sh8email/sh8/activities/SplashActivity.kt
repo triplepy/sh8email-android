@@ -1,7 +1,9 @@
 package org.triplepy.sh8email.sh8.activities
 
 import android.os.Bundle
+import android.os.Handler
 import android.support.v7.app.AppCompatActivity
+import org.triplepy.sh8email.sh8.activities.login.LoginActivity
 import org.triplepy.sh8email.sh8.ext.startActivity
 
 /**
@@ -17,6 +19,9 @@ class SplashActivity : AppCompatActivity() {
 
         // Todo: load something
 
-        startActivity(MainActivity::class.java)
+        Handler().postDelayed({
+            startActivity(LoginActivity::class.java)
+            supportFinishAfterTransition()
+        }, 1000)
     }
 }

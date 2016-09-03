@@ -8,7 +8,7 @@ import android.content.Intent
 import android.media.RingtoneManager
 import android.support.v4.app.NotificationCompat
 import org.triplepy.sh8email.sh8.R
-import org.triplepy.sh8email.sh8.activities.MainActivity
+import org.triplepy.sh8email.sh8.activities.main.MainActivity
 
 
 object NotificationUtil {

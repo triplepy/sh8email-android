@@ -14,8 +14,8 @@ import rx.Observable
  * Created by igangsan on 2016. 8. 28..
  */
 
-interface LoginService {
+interface EmailService {
     @FormUrlEncoded
-    @POST("/login")
-    fun loginWithEmail(@Field("email") email: String): Observable<ResponseBody>
+    @POST("/rest/list/")
+    fun getMailBox(@Field("recipient") id: String): Observable<ResponseBody>
 }

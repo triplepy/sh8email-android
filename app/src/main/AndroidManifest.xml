@@ -2,22 +2,24 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.triplepy.sh8email.sh8">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:allowBackup="true"
         android:name=".app.App"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.login.LoginActivity" />
+        <activity android:name=".activities.main.MainActivity" />
 
         <!-- Register FCM Service -->
         <service android:name=".fcm.FCMInstanceIDService">
@@ -30,6 +32,7 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="da83bacf46237d8ae4c99add34cee26f841aeb3b" />
