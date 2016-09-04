@@ -11,7 +11,8 @@ import org.triplepy.sh8email.sh8.ext.startActivity
  * ==============================
  * Created by igangsan on 2016. 9. 1..
  */
-class SplashActivity : AppCompatActivity() {
+class SplashActivity() : AppCompatActivity(){
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
