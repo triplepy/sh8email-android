@@ -32,22 +32,38 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/vTextInputLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_centerVertical="true"
+        android:textColorHint="@color/md_white_1000">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/login_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:singleLine="true"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
+            android:minWidth="80dp"
+            android:maxWidth="200dp"
             android:textSize="22sp" />
     </android.support.design.widget.TextInputLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/vTextInputLayout"
+        android:layout_alignTop="@id/vTextInputLayout"
+        android:layout_alignBottom="@id/vTextInputLayout"
+        android:paddingBottom="5dp"
+        android:gravity="bottom"
+        android:text="\@sh8.email"
+        android:textStyle="bold"
+        android:textColor="@color/md_white_1000"
+        android:textSize="22sp"
+        />
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"

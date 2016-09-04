@@ -30,6 +30,7 @@ class LoginActivity : BaseActivity(), LoginPresenter.View {
         DaggerLoginComponent.builder().loginModule(LoginModule(this)).build().inject(this)
 
         login_nextBtn.setOnClickListener {
+            hideSoftKeyboard()
             presenter.loginWithId(login_id.text.toString())
         }
     }

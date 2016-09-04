@@ -2,13 +2,14 @@ package org.triplepy.sh8email.sh8.api
 
 
 import okhttp3.OkHttpClient
-import okhttp3.ResponseBody
 import org.triplepy.sh8email.sh8.Constants
 import org.triplepy.sh8email.sh8.api.service.EmailService
+import org.triplepy.sh8email.sh8.data.Mail
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import rx.Observable
+import java.util.*
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -36,7 +37,7 @@ class Sh8Client {
         emailService = retrofit.create(EmailService::class.java)
     }
 
-    fun getMailBox(id: String): Observable<ResponseBody> {
+    fun getMailBox(id: String): Observable<ArrayList<Mail>> {
         return emailService.getMailBox(id)
     }
 
