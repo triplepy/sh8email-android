@@ -33,5 +33,7 @@ class MainActivity : BaseActivity() {
                         LogAppEventUtil.eventLogin("email", false, it.code())
                     }
                 })
+
     }
+
 }
