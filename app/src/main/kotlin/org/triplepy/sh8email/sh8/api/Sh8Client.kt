@@ -4,7 +4,7 @@ package org.triplepy.sh8email.sh8.api
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import org.triplepy.sh8email.sh8.Constants
-import org.triplepy.sh8email.sh8.api.service.LoginService
+import org.triplepy.sh8email.sh8.api.service.EmailService
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -21,7 +21,7 @@ import javax.inject.Singleton
  */
 @Singleton
 class Sh8Client {
-    val loginService: LoginService
+    val emailService: EmailService
 
     @Inject
     constructor(okHttpClient: OkHttpClient) {
@@ -33,11 +33,11 @@ class Sh8Client {
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build()
 
-        loginService = retrofit.create<LoginService>(LoginService::class.java)
+        emailService = retrofit.create(EmailService::class.java)
     }
 
-    fun loginWithEmail(email: String): Observable<ResponseBody> {
-        return loginService.loginWithEmail(email)
+    fun getMailBox(id: String): Observable<ResponseBody> {
+        return emailService.getMailBox(id)
     }
 
 }
