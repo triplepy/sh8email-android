@@ -2,6 +2,7 @@ package org.triplepy.sh8email.sh8.activities.login
 
 import android.os.Bundle
 import android.view.View
+import com.jakewharton.rxbinding.view.clicks
 import kotlinx.android.synthetic.main.login_activity.*
 import org.triplepy.sh8email.sh8.R
 import org.triplepy.sh8email.sh8.activities.BaseActivity
@@ -9,6 +10,7 @@ import org.triplepy.sh8email.sh8.activities.login.di.DaggerLoginComponent
 import org.triplepy.sh8email.sh8.activities.login.di.LoginModule
 import org.triplepy.sh8email.sh8.activities.login.presenter.LoginPresenter
 import org.triplepy.sh8email.sh8.ext.toast
+import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 /**
@@ -29,10 +31,12 @@ class LoginActivity : BaseActivity(), LoginPresenter.View {
 
         DaggerLoginComponent.builder().loginModule(LoginModule(this)).build().inject(this)
 
-        login_nextBtn.setOnClickListener {
-            hideSoftKeyboard()
-            presenter.loginWithId(login_id.text.toString())
-        }
+        login_nextBtn.clicks()
+                .throttleFirst(3, TimeUnit.SECONDS)
+                .subscribe {
+                    hideSoftKeyboard()
+                    presenter.loginWithId(login_id.text.toString())
+                }
     }
 
     override fun showToast(message: String) {
