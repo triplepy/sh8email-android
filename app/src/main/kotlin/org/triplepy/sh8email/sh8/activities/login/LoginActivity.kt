@@ -1,6 +1,7 @@
 package org.triplepy.sh8email.sh8.activities.login
 
 import android.os.Bundle
+import android.transition.TransitionInflater
 import android.view.View
 import kotlinx.android.synthetic.main.login_activity.*
 import org.triplepy.sh8email.sh8.R
@@ -33,6 +34,13 @@ class LoginActivity : BaseActivity(), LoginPresenter.View {
             hideSoftKeyboard()
             presenter.loginWithId(login_id.text.toString())
         }
+
+        setupWindowAnimations()
+
+    }
+    private fun setupWindowAnimations() {
+        val slide = TransitionInflater.from(this).inflateTransition(R.transition.activity_slide)
+        getWindow().setExitTransition(slide)
     }
 
     override fun showToast(message: String) {
