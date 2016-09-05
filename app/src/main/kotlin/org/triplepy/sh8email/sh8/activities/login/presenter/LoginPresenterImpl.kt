@@ -25,22 +25,25 @@ class LoginPresenterImpl : LoginPresenter {
     }
 
     override fun loginWithId(id: String) {
-        view.showProgressBar()
-
-        client.getMailBox(id)
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({
-                    view.hideProgressBar()
-                    view.showToast("총 ${it.size}개의 메일이 있습니다.")
-                    LogAppEventUtil.eventLogin("email", true)
-                }, {
-                    if (it is HttpException) {
+        if (id.length == 0) {
+            view.showToast("아이디를 확인해주세요.")
+        } else {
+            view.showProgressBar()
+            client.getMailBox(id)
+                    .subscribeOn(Schedulers.newThread())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe({
                         view.hideProgressBar()
-                        view.showToast("ErrorCode : ${it.code()}")
-                        LogAppEventUtil.eventLogin("email", false, it.code())
-                    }
-                })
+                        view.showToast("총 ${it.size}개의 메일이 있습니다.")
+                        LogAppEventUtil.eventLogin("email", true)
+                    }, {
+                        if (it is HttpException) {
+                            view.hideProgressBar()
+                            view.showToast("ErrorCode : ${it.code()}")
+                            LogAppEventUtil.eventLogin("email", false, it.code())
+                        }
+                    })
+        }
     }
 
 }
