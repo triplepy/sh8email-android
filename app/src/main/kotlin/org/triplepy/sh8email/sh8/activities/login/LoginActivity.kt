@@ -1,5 +1,7 @@
 package org.triplepy.sh8email.sh8.activities.login
 
+import android.app.ActivityOptions
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.transition.TransitionInflater
@@ -11,6 +13,7 @@ import org.triplepy.sh8email.sh8.activities.BaseActivity
 import org.triplepy.sh8email.sh8.activities.login.di.DaggerLoginComponent
 import org.triplepy.sh8email.sh8.activities.login.di.LoginModule
 import org.triplepy.sh8email.sh8.activities.login.presenter.LoginPresenter
+import org.triplepy.sh8email.sh8.activities.main.MainActivity
 import org.triplepy.sh8email.sh8.ext.toast
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
@@ -47,6 +50,21 @@ class LoginActivity : BaseActivity(), LoginPresenter.View {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val slide = TransitionInflater.from(this).inflateTransition(R.transition.activity_slide)
             window.exitTransition = slide
+
+
+            /**
+             *  hyundee - 화면 넘어 갈때 id가 커지면서 그대로 애니매이션 되도록 하고싶었다.
+             *  Enable Window Content Transition - 이것 적용중
+             *  인텐트로 화면 전환활때 애니매이션 넣을 view name을 넘기는데
+             *  이작업을 여기서 해도 되는가 생각해보자
+             * */
+            // Text Animation
+            var i = Intent(this, MainActivity::class.java)
+            var sharedView = login_id
+            var transitionName = getString(R.string.trans_login_id)
+            var transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(this, sharedView, transitionName)
+            startActivity(i, transitionActivityOptions.toBundle())
+
         }
     }
 

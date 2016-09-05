@@ -3,4 +3,6 @@
     <string name="notification_ticker">Sh8에서 알립니다.</string>
     <string name="email">이메일</string>
     <string name="message_input_id">아이디를 입력해주세요 !</string>
+
+    <string name="trans_login_id"> animation text </string>
 </resources>

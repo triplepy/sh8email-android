@@ -48,7 +48,9 @@
             android:textColorHint="@color/white"
             android:minWidth="80dp"
             android:maxWidth="200dp"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            style="@style/MaterialAnimations.Text.Small"
+            android:transitionName="@string/trans_login_id"/>
     </android.support.design.widget.TextInputLayout>
 
     <TextView
