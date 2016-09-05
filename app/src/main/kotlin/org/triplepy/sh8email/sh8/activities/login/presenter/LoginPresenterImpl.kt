@@ -32,7 +32,7 @@ class LoginPresenterImpl : LoginPresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
                     view.hideProgressBar()
-                    view.showToast("ResponseBody : ${it?.string()}")
+                    view.showToast("총 ${it.size}개의 메일이 있습니다.")
                     LogAppEventUtil.eventLogin("email", true)
                 }, {
                     if (it is HttpException) {
