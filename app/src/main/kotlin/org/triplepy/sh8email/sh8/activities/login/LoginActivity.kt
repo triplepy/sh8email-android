@@ -1,6 +1,7 @@
 package org.triplepy.sh8email.sh8.activities.login
 
 import android.app.ActivityOptions
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -29,6 +30,8 @@ import javax.inject.Inject
 class LoginActivity : BaseActivity(), LoginPresenter.View {
     @Inject
     lateinit var presenter: LoginPresenter
+
+    private val context: Context? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,11 +62,14 @@ class LoginActivity : BaseActivity(), LoginPresenter.View {
              *  이작업을 여기서 해도 되는가 생각해보자
              * */
             // Text Animation
-            var i = Intent(this, MainActivity::class.java)
-            var sharedView = login_id
-            var transitionName = getString(R.string.trans_login_id)
-            var transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(this, sharedView, transitionName)
-            startActivity(i, transitionActivityOptions.toBundle())
+            val i = Intent(this, MainActivity::class.java)
+            val sharedView = login_id
+            val transitionName = getString(R.string.trans_login_id)
+                    //id.transactionName
+
+            val options = ActivityOptions.makeSceneTransitionAnimation(this, sharedView, transitionName)
+            context?.startActivity(intent, options.toBundle())
+
 
         }
     }
