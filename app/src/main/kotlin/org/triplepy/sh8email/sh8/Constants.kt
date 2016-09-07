@@ -10,4 +10,5 @@ package org.triplepy.sh8email.sh8
 
 object Constants {
     val BASE_URL = "https://sh8.email"
+    val PREF_COOKIE= "pref_cookie"
 }

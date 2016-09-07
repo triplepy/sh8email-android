@@ -3,6 +3,7 @@ package org.triplepy.sh8email.sh8.app
 import android.app.Application
 import com.crashlytics.android.Crashlytics
 import io.fabric.sdk.android.Fabric
+import org.triplepy.sh8email.sh8.SharedPreferencesController
 
 /**
  * The sh8email-android Project.
@@ -18,9 +19,15 @@ import io.fabric.sdk.android.Fabric
  */
 
 class App : Application() {
+    companion object{
+        lateinit var pref: SharedPreferencesController
+    }
+
     override fun onCreate() {
         super.onCreate()
         Fabric.with(this, Crashlytics())
 
+        pref = SharedPreferencesController(this, "sh8Pref")
     }
+
 }

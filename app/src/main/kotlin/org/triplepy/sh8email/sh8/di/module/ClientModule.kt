@@ -4,6 +4,8 @@ import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.triplepy.sh8email.sh8.api.AddCookiesInterceptor
+import org.triplepy.sh8email.sh8.api.ReceivedCookiesInterceptor
 import org.triplepy.sh8email.sh8.api.Sh8Client
 
 /**
@@ -20,7 +22,10 @@ class ClientModule {
     fun provideOkHttpClient(): OkHttpClient {
         val logging = HttpLoggingInterceptor()
         logging.level = HttpLoggingInterceptor.Level.BODY
-        return OkHttpClient.Builder().addInterceptor(logging).build()
+        return OkHttpClient.Builder()
+                .addInterceptor(AddCookiesInterceptor())
+                .addInterceptor(ReceivedCookiesInterceptor())
+                .addInterceptor(logging).build()
     }
 
     @Provides
