@@ -1,5 +1,7 @@
 package org.triplepy.sh8email.sh8.activities.login
 
+import android.app.ActivityOptions
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.transition.TransitionInflater
@@ -11,6 +13,7 @@ import org.triplepy.sh8email.sh8.activities.BaseActivity
 import org.triplepy.sh8email.sh8.activities.login.di.DaggerLoginComponent
 import org.triplepy.sh8email.sh8.activities.login.di.LoginModule
 import org.triplepy.sh8email.sh8.activities.login.presenter.LoginPresenter
+import org.triplepy.sh8email.sh8.activities.main.MainActivity
 import org.triplepy.sh8email.sh8.ext.toast
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
@@ -26,6 +29,8 @@ import javax.inject.Inject
 class LoginActivity : BaseActivity(), LoginPresenter.View {
     @Inject
     lateinit var presenter: LoginPresenter
+
+    private val context: Context? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,12 +61,14 @@ class LoginActivity : BaseActivity(), LoginPresenter.View {
              *  이작업을 여기서 해도 되는가 생각해보자
              * */
             // Text Animation
-//            val i = Intent(this, MainActivity::class.java)
-//
-//            val sharedView = login_id
-//            val transitionName = login_id.transitionName
-//            val transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(this, sharedView, transitionName)
-//            startActivity(i, transitionActivityOptions.toBundle())
+            val i = Intent(this, MainActivity::class.java)
+            val sharedView = login_id
+            val transitionName = getString(R.string.trans_login_id)
+                    //id.transactionName
+
+            val options = ActivityOptions.makeSceneTransitionAnimation(this, sharedView, transitionName)
+            context?.startActivity(intent, options.toBundle())
+
 
         }
     }
