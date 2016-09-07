@@ -19,6 +19,13 @@ import javax.inject.Singleton
  * org.triplepy.sh8email.sh8.api
  * ==============================
  * Created by igangsan on 2016. 8. 28..
+ *
+ * Retrofit Client를 싱글톤으로 사용하기 위한 클래스이며
+ * 메서드를 이용하여 쉽게 통신을 할 수 있습니다.
+ * Dagger2를 사용하였습니다.
+ *
+ * @author 이강산 (river-mountain)
+ *
  */
 @Singleton
 class Sh8Client {

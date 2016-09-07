@@ -13,6 +13,10 @@ import javax.inject.Inject
  * org.triplepy.sh8email.sh8.activities.login
  * ==============================
  * Created by igangsan on 2016. 9. 3..
+ *
+ * Login feature 구현부 입니다.
+ *
+ * @author 이강산 (river-mountain)
  */
 class LoginPresenterImpl : LoginPresenter {
     val client: Sh8Client

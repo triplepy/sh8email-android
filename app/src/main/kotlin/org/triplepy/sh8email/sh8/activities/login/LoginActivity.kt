@@ -1,6 +1,7 @@
 package org.triplepy.sh8email.sh8.activities.login
 
 import android.app.ActivityOptions
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
