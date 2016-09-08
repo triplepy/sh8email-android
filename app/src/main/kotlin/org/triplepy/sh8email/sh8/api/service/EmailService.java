@@ -1,11 +1,14 @@
-package org.triplepy.sh8email.sh8.api.service
+package org.triplepy.sh8email.sh8.api.service;
 
-import org.triplepy.sh8email.sh8.data.Mail
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
-import rx.Observable
-import java.util.*
+
+import org.triplepy.sh8email.sh8.data.Mail;
+
+import java.util.ArrayList;
+
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.POST;
+import rx.Observable;
 
 /**
  * The sh8email-android Project.
@@ -34,8 +37,8 @@ import java.util.*
  * @author 이강산 (river-mountain)
  */
 
-interface EmailService {
+public interface EmailService {
     @FormUrlEncoded
     @POST("/rest/list/")
-    fun getMailBox(@Field("recipient") id: String): Observable<ArrayList<Mail>>
+    Observable<ArrayList<Mail>> getMailBox(@Field("recipient") String id);
 }
