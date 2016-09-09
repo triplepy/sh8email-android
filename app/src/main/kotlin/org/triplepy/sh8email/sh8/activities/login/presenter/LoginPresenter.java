@@ -1,4 +1,4 @@
-package org.triplepy.sh8email.sh8.activities.login.presenter
+package org.triplepy.sh8email.sh8.activities.login.presenter;
 
 /**
  * The sh8email-android Project.
@@ -11,12 +11,12 @@ package org.triplepy.sh8email.sh8.activities.login.presenter
  *
  * @author 이강산 (river-mountain)
  */
-interface LoginPresenter {
-    fun loginWithId(id: String)
+public interface LoginPresenter {
+    void loginWithId(String id);
 
     interface View {
-        fun showToast(message: String)
-        fun showProgressBar()
-        fun hideProgressBar()
+        void showToast(String message);
+        void showProgressBar();
+        void hideProgressBar();
     }
 }

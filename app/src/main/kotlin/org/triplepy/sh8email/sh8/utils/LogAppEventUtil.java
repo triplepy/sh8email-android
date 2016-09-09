@@ -1,7 +1,7 @@
-package org.triplepy.sh8email.sh8.utils
+package org.triplepy.sh8email.sh8.utils;
 
-import com.crashlytics.android.answers.Answers
-import com.crashlytics.android.answers.LoginEvent
+import com.crashlytics.android.answers.Answers;
+import com.crashlytics.android.answers.LoginEvent;
 
 /**
  * The sh8email-android Project.
@@ -11,12 +11,12 @@ import com.crashlytics.android.answers.LoginEvent
  * Created by igangsan on 2016. 9. 1..
  */
 
-object LogAppEventUtil {
-    fun eventLogin(method: String, isLoginSucceeded: Boolean, responseCode: Int = 200) {
-        Answers.getInstance().logLogin(LoginEvent()
+public class LogAppEventUtil {
+    public static void eventLogin(String method, Boolean isLoginSucceeded, Integer responseCode) {
+        Answers.getInstance().logLogin(new LoginEvent()
                 .putMethod(method)
                 .putSuccess(isLoginSucceeded)
                 .putCustomAttribute("responseCode", responseCode)
-        )
+        );
     }
 }
