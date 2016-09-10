@@ -40,3 +40,5 @@ captures/
 *.jks
 .idea/
 app/libs/
+
+fabric.properties
