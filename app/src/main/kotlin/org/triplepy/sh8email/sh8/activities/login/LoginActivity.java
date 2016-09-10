@@ -1,7 +1,6 @@
 package org.triplepy.sh8email.sh8.activities.login;
 
 import android.app.ActivityOptions;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.jakewharton.rxbinding.view.RxView;
 
 import org.triplepy.sh8email.sh8.R;
@@ -22,7 +22,10 @@ import org.triplepy.sh8email.sh8.activities.login.di.DaggerLoginComponent;
 import org.triplepy.sh8email.sh8.activities.login.di.LoginModule;
 import org.triplepy.sh8email.sh8.activities.login.presenter.LoginPresenter;
 import org.triplepy.sh8email.sh8.activities.main.MainActivity;
+import org.triplepy.sh8email.sh8.api.Sh8Client;
+import org.triplepy.sh8email.sh8.data.Mail;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
@@ -39,10 +42,12 @@ public class LoginActivity extends BaseActivity implements LoginPresenter.View {
     @Inject
     public LoginPresenter presenter;
 
-    private Context context;
     private ImageButton login_nextBtn;
     private TextView login_id;
     private ProgressBar progressBar;
+
+    @Inject
+    Sh8Client client;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -62,6 +67,13 @@ public class LoginActivity extends BaseActivity implements LoginPresenter.View {
                 });
 
 //        setupWindowAnimations();
+    }
+
+    @Override
+    public void navigateToMain(ArrayList<Mail> mails) {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("list", new Gson().toJson(mails));
+        startActivity(intent);
     }
 
     private void setupWindowAnimations() {
@@ -89,7 +101,7 @@ public class LoginActivity extends BaseActivity implements LoginPresenter.View {
 
     @Override
     public void showToast(String message) {
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     @Override

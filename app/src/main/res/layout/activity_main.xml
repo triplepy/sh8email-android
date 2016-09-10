@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/input_register_bg"
+    android:background="@color/white"
     android:fitsSystemWindows="false"
     android:foreground="?attr/selectableItemBackground">
 
@@ -26,13 +26,13 @@
                 app:layout_scrollFlags="scroll|enterAlways">
 
                 <TextView
+                    style="@style/MaterialAnimations.Text.Big"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:textColor="@color/white"
                     android:textSize="40sp"
-                    style="@style/MaterialAnimations.Text.Big"
-                android:transitionName="@string/trans_login_id"/>
+                    android:transitionName="@string/trans_login_id" />
 
             </android.support.v7.widget.Toolbar>
 
@@ -41,21 +41,10 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="85dp"
-        android:text="당신의 이메일은 무엇인가요 ? "
-        android:textColor="@color/input_login"
-        android:textSize="20sp" />
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="30dp"
         android:padding="8dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 

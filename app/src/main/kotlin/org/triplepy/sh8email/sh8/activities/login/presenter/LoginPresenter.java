@@ -1,5 +1,9 @@
 package org.triplepy.sh8email.sh8.activities.login.presenter;
 
+import org.triplepy.sh8email.sh8.data.Mail;
+
+import java.util.ArrayList;
+
 /**
  * The sh8email-android Project.
  * ==============================
@@ -16,6 +20,7 @@ public interface LoginPresenter {
 
     interface View {
         void showToast(String message);
+        void navigateToMain(ArrayList<Mail> mails);
         void showProgressBar();
         void hideProgressBar();
     }
