@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/mail_list_sender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_toStartOf="@+id/mail_list_date"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="텍스트 이름"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/mail_list_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mail_list_sender"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="텍스트" />
+
+    <TextView
+        android:id="@+id/mail_list_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="4 hour" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/mail_list_title"
+        android:layout_marginTop="16dp"
+        android:background="@color/md_blue_grey_100" />
+
+</RelativeLayout>

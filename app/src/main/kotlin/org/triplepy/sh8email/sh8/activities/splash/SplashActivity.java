@@ -1,4 +1,4 @@
-package org.triplepy.sh8email.sh8.activities;
+package org.triplepy.sh8email.sh8.activities.splash;
 
 import android.content.Intent;
 import android.os.Bundle;

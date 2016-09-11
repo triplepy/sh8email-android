@@ -19,7 +19,9 @@
             </intent-filter>
         </activity>
         <!--<activity android:name=".activities.login.LoginActivity" />-->
-        <activity android:name=".activities.main.MainActivity" />
+        <activity android:name=".activities.mailbox.list.MailListActivity"
+            android:label="메일목록"/>
+        <activity android:name=".activities.mailbox.detail.MailDetailActivity" />
 
         <!-- Register FCM Service -->
         <service android:name=".fcm.FCMInstanceIDService">

@@ -9,9 +9,8 @@ package org.triplepy.sh8email.sh8.activities.login.di;
  * Created by igangsan on 2016. 9. 3..
  */
 
+import org.triplepy.sh8email.sh8.api.ClientModule;
 import org.triplepy.sh8email.sh8.activities.login.presenter.LoginPresenter;
-import org.triplepy.sh8email.sh8.activities.login.presenter.LoginPresenterImpl;
-import org.triplepy.sh8email.sh8.di.module.ClientModule;
 
 import dagger.Module;
 import dagger.Provides;
@@ -22,11 +21,6 @@ public class LoginModule {
 
     public LoginModule(LoginPresenter.View view){
         this.view = view;
-    }
-
-    @Provides
-    public LoginPresenter provideLoginPresenter(LoginPresenterImpl loginPresenter) {
-        return loginPresenter;
     }
 
     @Provides

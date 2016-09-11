@@ -24,11 +24,20 @@ import io.fabric.sdk.android.Fabric;
 
 public class App extends Application {
     public static SharedPreferencesController pref;
+    public static String sessionId;
 
     @Override
     public void onCreate() {
         super.onCreate();
         Fabric.with(this, new Crashlytics());
         pref = new SharedPreferencesController(this, "sh8Pref");
+    }
+
+    public static String getSessionId() {
+        return sessionId;
+    }
+
+    public static void setSessionId(String sessionId) {
+        App.sessionId = sessionId;
     }
 }

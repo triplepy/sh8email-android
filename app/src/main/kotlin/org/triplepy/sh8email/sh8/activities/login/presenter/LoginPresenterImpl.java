@@ -42,6 +42,7 @@ public class LoginPresenterImpl implements LoginPresenter {
                     .subscribe(mails -> {
                         view.hideProgressBar();
                         view.showToast("총 " + mails.size() + "개의 메일이 있습니다.");
+                        view.navigateToMain(id);
 //                        LogAppEventUtil.eventLogin("email", true);
                     }, throwable -> {
                         if (throwable instanceof HttpException) {
@@ -50,6 +51,7 @@ public class LoginPresenterImpl implements LoginPresenter {
                             LogAppEventUtil.eventLogin("email", false, ((HttpException) throwable).code());
                         }
                     });
+
         }
     }
 

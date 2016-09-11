@@ -38,7 +38,7 @@ public class Sh8Client {
     public Sh8Client(OkHttpClient okHttpClient){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Constants.BASE_URL)
-                .client(okHttpClient)
+                .client(okHttpClient) // OkHttp에 추가적인 동작을 붙이고 싶을 때 ex) 통신로깅, 쿠키인젝션
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
@@ -50,4 +50,7 @@ public class Sh8Client {
         return emailService.getMailBox(id);
     }
 
+    public Observable<Mail> getMailDetail(Long pk){
+        return  emailService.getMailDetail(pk);
+    }
 }

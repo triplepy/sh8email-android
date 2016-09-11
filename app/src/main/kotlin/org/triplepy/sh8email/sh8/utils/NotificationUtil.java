@@ -10,12 +10,12 @@ import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 
 import org.triplepy.sh8email.sh8.R;
-import org.triplepy.sh8email.sh8.activities.main.MainActivity;
+import org.triplepy.sh8email.sh8.activities.mailbox.list.MailListActivity;
 
 
 public class NotificationUtil {
     public static void sendNotification(Context context, String messageTitle, String messageBody) {
-        Intent intent = new Intent(context, MainActivity.class);
+        Intent intent = new Intent(context, MailListActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_ONE_SHOT);
 

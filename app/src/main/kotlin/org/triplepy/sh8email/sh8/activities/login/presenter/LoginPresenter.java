@@ -16,6 +16,7 @@ public interface LoginPresenter {
 
     interface View {
         void showToast(String message);
+        void navigateToMain(String id);
         void showProgressBar();
         void hideProgressBar();
     }
