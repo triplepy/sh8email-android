@@ -1,4 +1,4 @@
-package org.triplepy.sh8email.sh8.di.module;
+package org.triplepy.sh8email.sh8.api;
 
 import org.triplepy.sh8email.sh8.api.AddCookiesInterceptor;
 import org.triplepy.sh8email.sh8.api.ReceivedCookiesInterceptor;

@@ -50,7 +50,7 @@ public class Sh8Client {
         return emailService.getMailBox(id);
     }
 
-    public Observable<Mail> getMailDetail(Integer number){
+    public Observable<Mail> getMailDetail(String number){
         return  emailService.getMailDetail(number);
     }
 }

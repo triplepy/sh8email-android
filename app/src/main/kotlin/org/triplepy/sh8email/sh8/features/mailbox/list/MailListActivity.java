@@ -1,4 +1,4 @@
-package org.triplepy.sh8email.sh8.activities.main;
+package org.triplepy.sh8email.sh8.features.mailbox.list;
 
 
 import android.os.Bundle;
@@ -18,7 +18,7 @@ import java.util.Arrays;
 
 // FIXME: MAIN ACTIVITY!
 
-public class MainActivity extends BaseActivity {
+public class MailListActivity extends BaseActivity {
     private RecyclerView recyclerView;
     private MailAdapter adapter;
     private ArrayList<Mail> mails;

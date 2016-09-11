@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import org.triplepy.sh8email.sh8.activities.login.LoginActivity;
+import org.triplepy.sh8email.sh8.features.login.LoginActivity;
 
 /**
  * The sh8email-android Project.

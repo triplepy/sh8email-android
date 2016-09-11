@@ -45,5 +45,5 @@ public interface EmailService {
 
     @FormUrlEncoded
     @POST("mail/{number}")
-    Observable<Mail> getMailDetail(@Path("number")Integer number);
+    Observable<Mail> getMailDetail(@Path("number")String number);
 }

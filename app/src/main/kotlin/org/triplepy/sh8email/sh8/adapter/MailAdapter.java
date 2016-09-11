@@ -10,10 +10,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.triplepy.sh8email.sh8.R;
-import org.triplepy.sh8email.sh8.activities.MailDetailActivity;
 import org.triplepy.sh8email.sh8.data.Mail;
+import org.triplepy.sh8email.sh8.features.mailbox.detail.MailDetailActivity;
 
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * The sh8email-android Project.
@@ -28,7 +31,7 @@ public class MailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Mail> mailList;
     private Context context;
 
-    public MailAdapter(List mailList, Context context) {
+    public MailAdapter(List<Mail> mailList, Context context) {
         this.mailList = mailList;
         this.context =  context;
     }
@@ -42,9 +45,11 @@ public class MailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         ViewHolder vh = (ViewHolder) holder;
-        Mail mails = mailList.get(position);
-        vh.mail_detail.setText(mails.getSubject());
+        Mail mail = mailList.get(position);
+        vh.mail_detail.setText(mail.getSubject());
         vh.root.setOnClickListener(v -> {
+            Intent intent = new Intent(context, MailDetailActivity.class);
+//            intent.putExtra(Constants.EXTRAS_MAIL_SRL, mail)
             context.startActivity(new Intent(context, MailDetailActivity.class));
         });
 
@@ -55,18 +60,16 @@ public class MailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return mailList.size();
     }
 
-}
 
-class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        @BindView(R.id.root)
+        RelativeLayout root;
+        @BindView(R.id.mail_detail)
+        TextView mail_detail;
 
-    RelativeLayout root;
-    TextView mail_detail;
-
-    public ViewHolder(View itemView) {
-        super(itemView);
-        root = (RelativeLayout) itemView.findViewById(R.id.root);
-        mail_detail = (TextView) itemView.findViewById(R.id.mail_detail);
-
-
+        public ViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.bind(this, itemView);
+        }
     }
 }

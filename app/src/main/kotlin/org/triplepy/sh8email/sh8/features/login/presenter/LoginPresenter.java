@@ -1,4 +1,4 @@
-package org.triplepy.sh8email.sh8.activities.login.presenter;
+package org.triplepy.sh8email.sh8.features.login.presenter;
 
 import org.triplepy.sh8email.sh8.data.Mail;
 
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**
  * The sh8email-android Project.
  * ==============================
- * org.triplepy.sh8email.sh8.activities.login
+ * org.triplepy.sh8email.sh8.features.login
  * ==============================
  * Created by igangsan on 2016. 9. 3..
  *
