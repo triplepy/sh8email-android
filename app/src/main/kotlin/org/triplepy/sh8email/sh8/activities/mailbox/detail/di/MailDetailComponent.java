@@ -1,13 +1,13 @@
-package org.triplepy.sh8email.sh8.features.mailbox.detail.di;
+package org.triplepy.sh8email.sh8.activities.mailbox.detail.di;
 
-import org.triplepy.sh8email.sh8.features.mailbox.detail.MailDetailActivity;
+import org.triplepy.sh8email.sh8.activities.mailbox.detail.MailDetailActivity;
 
 import dagger.Component;
 
 /**
  * The sh8email-android Project.
  * ==============================
- * org.triplepy.sh8email.sh8.features.mailbox.detail.di
+ * org.triplepy.sh8email.sh8.activities.mailbox.detail.di
  * ==============================
  * Created by igangsan on 2016. 9. 11..
  */

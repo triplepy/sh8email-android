@@ -8,8 +8,11 @@ package org.triplepy.sh8email.sh8.data;
  * Created by igangsan on 2016. 9. 4..
  *
  * @author 이강산 (river-mountain)
+ *
+ * 롬복은 일단 안씁니다..
  */
 public class Mail {
+    private Long pk;
     private String recipient;
     private String secret_code;
     private String sender;
@@ -17,6 +20,14 @@ public class Mail {
     private String contents;
     private String recip_date;
     private Boolean is_read;
+
+    public Long getPk() {
+        return pk;
+    }
+
+    public void setPk(Long pk) {
+        this.pk = pk;
+    }
 
     public String getRecipient() {
         return recipient;

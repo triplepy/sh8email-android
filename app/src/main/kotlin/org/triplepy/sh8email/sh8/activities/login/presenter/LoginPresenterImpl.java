@@ -1,4 +1,4 @@
-package org.triplepy.sh8email.sh8.features.login.presenter;
+package org.triplepy.sh8email.sh8.activities.login.presenter;
 
 import org.triplepy.sh8email.sh8.api.Sh8Client;
 import org.triplepy.sh8email.sh8.utils.LogAppEventUtil;
@@ -12,7 +12,7 @@ import rx.schedulers.Schedulers;
 /**
  * The sh8email-android Project.
  * ==============================
- * org.triplepy.sh8email.sh8.features.login
+ * org.triplepy.sh8email.sh8.activities.login
  * ==============================
  * Created by igangsan on 2016. 9. 3..
  * <p>
@@ -42,7 +42,7 @@ public class LoginPresenterImpl implements LoginPresenter {
                     .subscribe(mails -> {
                         view.hideProgressBar();
                         view.showToast("총 " + mails.size() + "개의 메일이 있습니다.");
-                        view.navigateToMain(mails);
+                        view.navigateToMain(id);
 //                        LogAppEventUtil.eventLogin("email", true);
                     }, throwable -> {
                         if (throwable instanceof HttpException) {

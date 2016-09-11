@@ -1,4 +1,4 @@
-package org.triplepy.sh8email.sh8.features.mailbox.detail.presenter;
+package org.triplepy.sh8email.sh8.activities.mailbox.detail.presenter;
 
 import org.triplepy.sh8email.sh8.api.Sh8Client;
 
@@ -10,7 +10,7 @@ import rx.schedulers.Schedulers;
 /**
  * The sh8email-android Project.
  * ==============================
- * org.triplepy.sh8email.sh8.features.mailbox.detail.presenter
+ * org.triplepy.sh8email.sh8.activities.mailbox.detail.presenter
  * ==============================
  * Created by igangsan on 2016. 9. 11..
  */
@@ -26,8 +26,8 @@ public class MailDetailPresenterImpl implements MailDetailPresenter{
     }
 
     @Override
-    public void getMail(String srl) {
-        client.getMailDetail(srl)
+    public void getMail(Long pk) {
+        client.getMailDetail(pk)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(mail -> {

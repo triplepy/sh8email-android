@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 import rx.Observable;
@@ -43,7 +44,6 @@ public interface EmailService {
     @POST("mail/list/")
     Observable<ArrayList<Mail>> getMailBox(@Field("recipient") String id);
 
-    @FormUrlEncoded
-    @POST("mail/{number}")
-    Observable<Mail> getMailDetail(@Path("number")String number);
+    @GET("mail/{pk}/")
+    Observable<Mail> getMailDetail(@Path("pk")Long pk);
 }

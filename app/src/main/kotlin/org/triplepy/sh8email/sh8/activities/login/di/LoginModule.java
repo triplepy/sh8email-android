@@ -1,16 +1,16 @@
-package org.triplepy.sh8email.sh8.features.login.di;
+package org.triplepy.sh8email.sh8.activities.login.di;
 
 
 /**
  * The sh8email-android Project.
  * ==============================
- * org.triplepy.sh8email.sh8.features.login.di
+ * org.triplepy.sh8email.sh8.activities.login.di
  * ==============================
  * Created by igangsan on 2016. 9. 3..
  */
 
 import org.triplepy.sh8email.sh8.api.ClientModule;
-import org.triplepy.sh8email.sh8.features.login.presenter.LoginPresenter;
+import org.triplepy.sh8email.sh8.activities.login.presenter.LoginPresenter;
 
 import dagger.Module;
 import dagger.Provides;

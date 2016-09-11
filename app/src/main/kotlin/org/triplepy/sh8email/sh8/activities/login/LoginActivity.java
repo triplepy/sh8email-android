@@ -1,4 +1,4 @@
-package org.triplepy.sh8email.sh8.features.login;
+package org.triplepy.sh8email.sh8.activities.login;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,20 +9,18 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
 import com.jakewharton.rxbinding.view.RxView;
 
 import org.triplepy.sh8email.sh8.R;
-import org.triplepy.sh8email.sh8.activities.BaseActivity;
+import org.triplepy.sh8email.sh8.activities.base.BaseActivity;
+import org.triplepy.sh8email.sh8.activities.login.di.DaggerLoginComponent;
+import org.triplepy.sh8email.sh8.activities.login.di.LoginModule;
+import org.triplepy.sh8email.sh8.activities.login.presenter.LoginPresenter;
+import org.triplepy.sh8email.sh8.activities.login.presenter.LoginPresenterImpl;
+import org.triplepy.sh8email.sh8.activities.mailbox.list.MailListActivity;
 import org.triplepy.sh8email.sh8.api.Sh8Client;
-import org.triplepy.sh8email.sh8.data.Mail;
-import org.triplepy.sh8email.sh8.features.login.di.DaggerLoginComponent;
-import org.triplepy.sh8email.sh8.features.login.di.LoginModule;
-import org.triplepy.sh8email.sh8.features.login.presenter.LoginPresenter;
-import org.triplepy.sh8email.sh8.features.login.presenter.LoginPresenterImpl;
-import org.triplepy.sh8email.sh8.features.mailbox.list.MailListActivity;
+import org.triplepy.sh8email.sh8.app.App;
 
-import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
@@ -68,9 +66,9 @@ public class LoginActivity extends BaseActivity implements LoginPresenter.View {
     }
 
     @Override
-    public void navigateToMain(ArrayList<Mail> mails) {
+    public void navigateToMain(String id) {
+        App.setSessionId(id);
         Intent intent = new Intent(this, MailListActivity.class);
-        intent.putExtra("list", new Gson().toJson(mails));
         startActivity(intent);
     }
 

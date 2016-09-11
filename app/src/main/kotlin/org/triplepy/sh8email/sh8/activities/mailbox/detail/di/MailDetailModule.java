@@ -1,7 +1,7 @@
-package org.triplepy.sh8email.sh8.features.mailbox.detail.di;
+package org.triplepy.sh8email.sh8.activities.mailbox.detail.di;
 
 import org.triplepy.sh8email.sh8.api.ClientModule;
-import org.triplepy.sh8email.sh8.features.mailbox.detail.presenter.MailDetailPresenter;
+import org.triplepy.sh8email.sh8.activities.mailbox.detail.presenter.MailDetailPresenter;
 
 import dagger.Module;
 import dagger.Provides;
@@ -9,7 +9,7 @@ import dagger.Provides;
 /**
  * The sh8email-android Project.
  * ==============================
- * org.triplepy.sh8email.sh8.features.mailbox.detail.di
+ * org.triplepy.sh8email.sh8.activities.mailbox.detail.di
  * ==============================
  * Created by igangsan on 2016. 9. 11..
  */
@@ -18,12 +18,12 @@ import dagger.Provides;
 public class MailDetailModule {
     private MailDetailPresenter.View view;
 
-    public MailDetailModule(MailDetailPresenter.View view){
+    public MailDetailModule(MailDetailPresenter.View view) {
         this.view = view;
     }
 
     @Provides
-    public MailDetailPresenter.View provideMailDetailView(){
+    public MailDetailPresenter.View provideMailDetailView() {
         return view;
     }
 }

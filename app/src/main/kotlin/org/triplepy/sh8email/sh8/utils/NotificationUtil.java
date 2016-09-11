@@ -10,7 +10,7 @@ import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 
 import org.triplepy.sh8email.sh8.R;
-import org.triplepy.sh8email.sh8.features.mailbox.list.MailListActivity;
+import org.triplepy.sh8email.sh8.activities.mailbox.list.MailListActivity;
 
 
 public class NotificationUtil {
