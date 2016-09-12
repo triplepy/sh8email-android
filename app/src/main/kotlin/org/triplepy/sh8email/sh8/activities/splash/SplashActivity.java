@@ -6,6 +6,9 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import com.wang.avi.AVLoadingIndicatorView;
+
+import org.triplepy.sh8email.sh8.R;
 import org.triplepy.sh8email.sh8.activities.login.LoginActivity;
 
 /**
@@ -16,14 +19,30 @@ import org.triplepy.sh8email.sh8.activities.login.LoginActivity;
  * Created by igangsan on 2016. 9. 1..
  */
 public class SplashActivity extends AppCompatActivity {
+    private AVLoadingIndicatorView avi;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.mail_detail_activity);
+        avi= (AVLoadingIndicatorView) findViewById(R.id.avi);
+        startAnim();
         // Todo: load something
 
         new Handler().postDelayed(() -> {
             startActivity(new Intent(SplashActivity.this, LoginActivity.class));
             supportFinishAfterTransition();
         }, 1000);
+        stopAnim();
+    }
+
+    void startAnim(){
+        avi.show();
+        // or avi.smoothToShow();
+    }
+
+    void stopAnim(){
+        avi.hide();
+        // or avi.smoothToHide();
     }
 }
