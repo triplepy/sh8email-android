@@ -5,4 +5,5 @@
     <string name="message_input_id">아이디를 입력해주세요 !</string>
 
     <string name="trans_login_id"> animation text </string>
+    <string name="sh8_email">\@sh8.email</string>
 </resources>

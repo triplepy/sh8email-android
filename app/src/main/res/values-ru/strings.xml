@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shinfinity</string>
+    <string name="email">Эл. адрес</string>
+    <string name="message_input_id">Введите идентификатор</string>
+</resources>

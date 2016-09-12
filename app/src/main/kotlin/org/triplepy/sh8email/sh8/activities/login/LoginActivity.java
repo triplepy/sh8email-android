@@ -3,13 +3,14 @@ package org.triplepy.sh8email.sh8.activities.login;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.jakewharton.rxbinding.view.RxView;
+import com.jakewharton.rxbinding.support.v7.widget.RxToolbar;
 
 import org.triplepy.sh8email.sh8.R;
 import org.triplepy.sh8email.sh8.activities.base.BaseActivity;
@@ -46,6 +47,8 @@ public class LoginActivity extends BaseActivity implements LoginPresenter.View {
     TextView login_id;
     @BindView(R.id.progressBar)
     ProgressBar progressBar;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
     @Inject
     Sh8Client client;
@@ -57,7 +60,7 @@ public class LoginActivity extends BaseActivity implements LoginPresenter.View {
         DaggerLoginComponent.builder().loginModule(new LoginModule(this)).build().inject(this);
         ButterKnife.bind(this);
 
-        RxView.clicks(login_nextBtn)
+        RxToolbar.navigationClicks(toolbar)
                 .throttleFirst(3, TimeUnit.SECONDS)
                 .subscribe(v -> {
                     hideSoftKeyboard();

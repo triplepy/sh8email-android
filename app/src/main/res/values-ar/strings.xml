@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="message_input_id">أدخل اسم المستخدم الخاص بك</string>
+</resources>
