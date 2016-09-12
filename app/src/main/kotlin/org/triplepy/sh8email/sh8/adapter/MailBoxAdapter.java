@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -28,14 +29,14 @@ import butterknife.ButterKnife;
  * Created by igangsan on 2016. 9. 10..
  */
 
-public class MailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class MailBoxAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<Mail> mailList;
     private Context context;
 
-    public MailAdapter(List<Mail> mailList, Context context) {
+    public MailBoxAdapter(List<Mail> mailList, Context context) {
         this.mailList = mailList;
-        this.context =  context;
+        this.context = context;
     }
 
     @Override
@@ -54,12 +55,17 @@ public class MailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         vh.mail_list_sender.setText(mail.getSender());
         vh.mail_list_date.setText(textTime);
 
-        vh.root.setOnClickListener(v -> {
-            Intent intent = new Intent(context, MailDetailActivity.class);
-            intent.putExtra(Constants.EXTRAS_MAIL_SRL, mail.getPk());
-            context.startActivity(intent);
-        });
-
+        if (mail.getSecret_code() != null) {
+            vh.mail_list_locked.setVisibility(View.VISIBLE);
+            vh.mail_list_title.setText("이 메일은 암호로 보호된 메일입니다.");
+        } else {
+            vh.mail_list_locked.setVisibility(View.GONE);
+            vh.root.setOnClickListener(v -> {
+                Intent intent = new Intent(context, MailDetailActivity.class);
+                intent.putExtra(Constants.EXTRAS_MAIL_SRL, mail.getPk());
+                context.startActivity(intent);
+            });
+        }
     }
 
     @Override
@@ -77,6 +83,8 @@ public class MailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         TextView mail_list_date;
         @BindView(R.id.mail_list_sender)
         TextView mail_list_sender;
+        @BindView(R.id.mail_list_locked)
+        ImageView mail_list_locked;
 
         public ViewHolder(View itemView) {
             super(itemView);

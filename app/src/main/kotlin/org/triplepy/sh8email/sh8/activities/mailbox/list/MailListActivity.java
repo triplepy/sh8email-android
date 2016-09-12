@@ -13,7 +13,7 @@ import org.triplepy.sh8email.sh8.activities.mailbox.list.di.DaggerMailListCompon
 import org.triplepy.sh8email.sh8.activities.mailbox.list.di.MailListModule;
 import org.triplepy.sh8email.sh8.activities.mailbox.list.presenter.MailListPresenter;
 import org.triplepy.sh8email.sh8.activities.mailbox.list.presenter.MailListPresenterImpl;
-import org.triplepy.sh8email.sh8.adapter.MailAdapter;
+import org.triplepy.sh8email.sh8.adapter.MailBoxAdapter;
 import org.triplepy.sh8email.sh8.api.Sh8Client;
 import org.triplepy.sh8email.sh8.data.Mail;
 
@@ -25,7 +25,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MailListActivity extends BaseActivity implements MailListPresenter.View {
-    private MailAdapter adapter;
+    private MailBoxAdapter adapter;
     private ArrayList<Mail> mails;
 
     @Inject
@@ -46,7 +46,7 @@ public class MailListActivity extends BaseActivity implements MailListPresenter.
         DaggerMailListComponent.builder().mailListModule(new MailListModule(this)).build().inject(this);
 
         mails = new ArrayList<>();
-        adapter = new MailAdapter(mails, this);
+        adapter = new MailBoxAdapter(mails, this);
 
         presenter.getMailBoxWithId(getSessionId());
 
