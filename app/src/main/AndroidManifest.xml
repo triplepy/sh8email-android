@@ -11,7 +11,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.login.LoginActivity">
+        <activity android:name=".activities.login.LoginActivity"
+            android:label="">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +21,7 @@
         </activity>
         <!--<activity android:name=".activities.login.LoginActivity" />-->
         <activity android:name=".activities.mailbox.list.MailListActivity"
-            android:label="메일목록"/>
+            android:label="@string/mail_list"/>
         <activity android:name=".activities.mailbox.detail.MailDetailActivity" />
 
         <!-- Register FCM Service -->

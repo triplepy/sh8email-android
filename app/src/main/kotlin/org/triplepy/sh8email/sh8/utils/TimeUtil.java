@@ -1,5 +1,8 @@
 package org.triplepy.sh8email.sh8.utils;
 
+import org.triplepy.sh8email.sh8.R;
+import org.triplepy.sh8email.sh8.app.App;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -22,22 +25,22 @@ public class TimeUtil {
 
             String msg;
             if (diffTime < SEC) {
-                msg = "방금 전";
+                msg = App.context.getString(R.string.time_now);
             } else if ((diffTime /= SEC) < MIN) {
-                msg = diffTime + "분 전";
+                msg = diffTime + App.context.getString(R.string.time_minute_ago);
             } else if ((diffTime /= MIN) < HOUR) {
-                msg = (diffTime) + "시간 전";
+                msg = (diffTime) + App.context.getString(R.string.time_hour_ago);
             } else if ((diffTime /= HOUR) < DAY) {
-                msg = (diffTime) + "일 전";
+                msg = (diffTime) + App.context.getString(R.string.time_day_ago);
             } else if ((diffTime /= DAY) < MONTH) {
-                msg = (diffTime) + "달 전";
+                msg = (diffTime) + App.context.getString(R.string.time_month_ago);
             } else {
-                msg = (diffTime) + "년 전";
+                msg = (diffTime) + App.context.getString(R.string.time_year_ago);
             }
             return msg;
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "언젠가";
+        return App.context.getString(R.string.time_some_ago);
     }
 }

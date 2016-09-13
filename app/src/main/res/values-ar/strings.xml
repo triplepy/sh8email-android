@@ -2,4 +2,12 @@
 <resources>
     <string name="email">البريد الإلكتروني</string>
     <string name="message_input_id">أدخل اسم المستخدم الخاص بك</string>
+    <string name="mail_list">القوائم البريدية</string>
+    <string name="time_day_ago">أيام مضت</string>
+    <string name="time_month_ago">منذ اشهر</string>
+    <string name="time_year_ago">سنين مضت</string>
+    <string name="time_some_ago">قبل حين</string>
+    <string name="time_minute_ago">دقائق مضت</string>
+    <string name="time_now">الآن</string>
+    <string name="time_hour_ago">منذ ساعات</string>
 </resources>

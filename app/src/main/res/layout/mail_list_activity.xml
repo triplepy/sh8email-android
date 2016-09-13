@@ -21,7 +21,9 @@
             app:expandedTitleTextAppearance="@style/ExpandedAppBar"
             app:layout_collapseMode="parallax"
             app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
-            app:title="메일목록">
+            app:collapsedTitleGravity="start"
+            app:expandedTitleGravity="start"
+            app:title="@string/mail_list">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"

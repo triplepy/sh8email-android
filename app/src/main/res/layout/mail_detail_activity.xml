@@ -7,16 +7,15 @@
 
     <TextView
         android:id="@+id/mail_detail_sender"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:ellipsize="end"
         android:singleLine="true"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/mail_detail_title"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:singleLine="true" />

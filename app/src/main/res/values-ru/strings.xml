@@ -3,4 +3,9 @@
     <string name="app_name">Shinfinity</string>
     <string name="email">Эл. адрес</string>
     <string name="message_input_id">Введите идентификатор</string>
+    <string name="mail_list">메일목록</string>
+    <string name="time_day_ago">일 전</string>
+    <string name="time_month_ago">달 전</string>
+    <string name="time_year_ago">년 전</string>
+    <string name="time_some_ago">언젠가</string>
 </resources>

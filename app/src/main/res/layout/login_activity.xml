@@ -9,9 +9,7 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:navigationIcon="@drawable/ic_arrow_forward_white_24dp"
-        android:layoutDirection="rtl">
+        android:layout_height="?attr/actionBarSize">
 
     </android.support.v7.widget.Toolbar>
 
@@ -29,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="55dp"
         android:paddingStart="16dp"
-        android:paddingEnd="32dp"
+        android:paddingEnd="16dp"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:textColorHint="@color/md_white_1000">
@@ -41,7 +39,7 @@
             android:layout_height="55dp"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
-            android:maxWidth="200dp"
+            android:maxWidth="150dp"
             android:minWidth="80dp"
             android:singleLine="true"
             android:textColor="@color/white"

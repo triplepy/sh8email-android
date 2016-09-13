@@ -3,9 +3,11 @@ package org.triplepy.sh8email.sh8.activities.mailbox.list;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 
 import org.triplepy.sh8email.sh8.R;
 import org.triplepy.sh8email.sh8.activities.base.BaseActivity;
@@ -38,6 +40,9 @@ public class MailListActivity extends BaseActivity implements MailListPresenter.
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
 
+    @BindView(R.id.collapsing_toolbar_layout)
+    CollapsingToolbarLayout collapsingToolbarLayout;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +58,9 @@ public class MailListActivity extends BaseActivity implements MailListPresenter.
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
+        collapsingToolbarLayout.setExpandedTitleGravity(Gravity.START);
+        collapsingToolbarLayout.setCollapsedTitleGravity(Gravity.START);
 
         swipeRefreshLayout.setOnRefreshListener(() -> {
             presenter.getMailBoxWithId(getSessionId());
