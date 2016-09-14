@@ -24,17 +24,18 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mail_detail_activity);
+        setContentView(R.layout.splash_activity);
         avi= (AVLoadingIndicatorView) findViewById(R.id.avi);
-        startAnim();
         // Todo: load something
+        startAnim();
 
         new Handler().postDelayed(() -> {
-            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
-            supportFinishAfterTransition();
-        }, 1000);
-        stopAnim();
+            startActivity(new Intent(this, LoginActivity.class));
+            //supportFinishAfterTransition();
+        }, 2000);
+
     }
+
 
     void startAnim(){
         avi.show();
