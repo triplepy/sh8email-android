@@ -7,11 +7,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jakewharton.rxbinding.view.RxMenuItem;
+import com.wang.avi.AVLoadingIndicatorView;
 
 import org.triplepy.sh8email.sh8.R;
 import org.triplepy.sh8email.sh8.activities.base.BaseActivity;
@@ -44,8 +44,8 @@ public class LoginActivity extends BaseActivity implements LoginPresenter.View {
 
     @BindView(R.id.login_id)
     TextView login_id;
-    @BindView(R.id.progressBar)
-    ProgressBar progressBar;
+    @BindView(R.id.avi)
+    AVLoadingIndicatorView avi;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
@@ -94,12 +94,14 @@ public class LoginActivity extends BaseActivity implements LoginPresenter.View {
 
     @Override
     public void showProgressBar() {
-        progressBar.setVisibility(View.VISIBLE);
+        avi.setVisibility(View.VISIBLE);
+        avi.show();
     }
 
     @Override
     public void hideProgressBar() {
-        progressBar.setVisibility(View.GONE);
+        avi.setVisibility(View.GONE);
+        avi.hide();
     }
 
 }

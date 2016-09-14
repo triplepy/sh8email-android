@@ -7,6 +7,7 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 
 import org.triplepy.sh8email.sh8.R;
@@ -42,6 +43,8 @@ public class MailListActivity extends BaseActivity implements MailListPresenter.
 
     @BindView(R.id.collapsing_toolbar_layout)
     CollapsingToolbarLayout collapsingToolbarLayout;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -66,6 +69,9 @@ public class MailListActivity extends BaseActivity implements MailListPresenter.
             presenter.getMailBoxWithId(getSessionId());
             swipeRefreshLayout.setRefreshing(false);
         });
+        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_arrow_back_black_24dp));
+        toolbar.setNavigationOnClickListener(v -> finish());
+
     }
 
     @Override
