@@ -30,9 +30,8 @@ public class SplashActivity extends AppCompatActivity {
         startAnim();
 
         new Handler().postDelayed(() -> {
-            Intent intent = new Intent(this, LoginActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
+            startActivity(new Intent(this, LoginActivity.class));
+            SplashActivity.this.finish();
             //supportFinishAfterTransition();
         }, 2000);
 
