@@ -62,6 +62,7 @@ public class MailBoxAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             vh.mail_list_locked.setVisibility(View.GONE);
             vh.root.setOnClickListener(v -> {
                 Intent intent = new Intent(context, MailDetailActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.putExtra(Constants.EXTRAS_MAIL_SRL, mail.getPk());
                 context.startActivity(intent);
             });

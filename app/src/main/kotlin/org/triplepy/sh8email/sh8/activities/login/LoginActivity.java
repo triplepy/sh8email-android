@@ -84,6 +84,7 @@ public class LoginActivity extends BaseActivity implements LoginPresenter.View {
     public void navigateToMain(String id) {
         App.setSessionId(id);
         Intent intent = new Intent(this, MailListActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
