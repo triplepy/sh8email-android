@@ -41,9 +41,9 @@ public class LoginPresenterImpl implements LoginPresenter {
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(mails -> {
                         view.hideProgressBar();
-                        if(mails.size()==0){
+                        if (mails.size() == 0) {
                             view.showToast(" 받아올 메일이 없습니다.");
-                        }else{
+                        } else {
                             view.showToast("총 " + mails.size() + "개의 메일이 있습니다.");
                         }
                         view.navigateToMain(id);

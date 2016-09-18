@@ -6,7 +6,6 @@ import org.triplepy.sh8email.sh8.data.Mail;
 import java.util.ArrayList;
 
 import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
@@ -40,9 +39,8 @@ import rx.Observable;
  */
 
 public interface EmailService {
-    @FormUrlEncoded
-    @POST("mail/list/")
-    Observable<ArrayList<Mail>> getMailBox(@Field("recipient") String id);
+    @POST("mail/{recipient}/list/")
+    Observable<ArrayList<Mail>> getMailBox(@Path("recipient") String recipient);
 
     @GET("mail/{pk}/")
     Observable<Mail> getMailDetail(@Path("pk")Long pk);
