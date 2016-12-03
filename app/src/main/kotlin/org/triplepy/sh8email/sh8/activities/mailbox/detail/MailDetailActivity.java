@@ -2,6 +2,8 @@ package org.triplepy.sh8email.sh8.activities.mailbox.detail;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Base64;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import org.triplepy.sh8email.sh8.Constants;
@@ -35,7 +37,7 @@ public class MailDetailActivity extends BaseActivity implements MailDetailPresen
     MailDetailPresenterImpl presenter;
 
     @BindView(R.id.mail_detail_contents)
-    TextView contents;
+    WebView contents;
     @BindView(R.id.mail_detail_sender)
     TextView sender;
     @BindView(R.id.mail_detail_title)
@@ -58,7 +60,8 @@ public class MailDetailActivity extends BaseActivity implements MailDetailPresen
     @Override
     public void setupMail(Mail mail) {
         String textTime = TimeUtil.formatTimeString(mail.getRecip_date());
-        contents.setText(mail.getContents());
+        String mailEncodedContents = Base64.encodeToString(mail.getContents().getBytes(),Base64.DEFAULT);
+        contents.loadData(mailEncodedContents, "text/html; charset=utf-8", "base64");
         sender.setText(mail.getSender());
         title.setText(mail.getSubject());
         date.setText(textTime);
