@@ -49,13 +49,13 @@ public class MailBoxAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         ViewHolder vh = (ViewHolder) holder;
         Mail mail = mailList.get(position);
-        String textTime = TimeUtil.formatTimeString(mail.getRecip_date());
+        String textTime = TimeUtil.formatTimeString(mail.getRecipDate());
 
         vh.mail_list_title.setText(mail.getSubject());
         vh.mail_list_sender.setText(mail.getSender());
         vh.mail_list_date.setText(textTime);
 
-        if (mail.getSecret_code() != null) {
+        if (mail.getSecretCode() != null) {
             vh.mail_list_locked.setVisibility(View.VISIBLE);
             vh.mail_list_title.setText("이 메일은 암호로 보호된 메일입니다.");
         } else {

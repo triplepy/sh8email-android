@@ -3,9 +3,11 @@ package org.triplepy.sh8email.sh8.utils;
 import org.triplepy.sh8email.sh8.R;
 import org.triplepy.sh8email.sh8.app.App;
 
+import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.TimeZone;
 
 public class TimeUtil {
     private static final int SEC = 60;
@@ -16,7 +18,8 @@ public class TimeUtil {
 
     public static String formatTimeString(String tempDate) {
         try {
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSS'Z'", Locale.KOREAN);
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSS'Z'", Locale.getDefault());
+            format.setTimeZone(TimeZone.getTimeZone("UTC"));
             Date date = format.parse(tempDate);
 
             long curTime = System.currentTimeMillis();

@@ -59,7 +59,7 @@ public class MailDetailActivity extends BaseActivity implements MailDetailPresen
 
     @Override
     public void setupMail(Mail mail) {
-        String textTime = TimeUtil.formatTimeString(mail.getRecip_date());
+        String textTime = TimeUtil.formatTimeString(mail.getRecipDate());
         String mailEncodedContents = Base64.encodeToString(mail.getContents().getBytes(),Base64.DEFAULT);
         contents.loadData(mailEncodedContents, "text/html; charset=utf-8", "base64");
         sender.setText(mail.getSender());
