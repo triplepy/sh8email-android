@@ -9,7 +9,7 @@ package org.triplepy.sh8email.sh8;
  */
 
 public class Constants {
-    public static String BASE_URL = "https://sh8.email/rest/";
+    public static String BASE_URL = "https://sh8.email/";
     public static String PREF_COOKIE= "pref_cookie";
 
     public static String EXTRAS_MAIL_SRL = "extras_mail_srl";
