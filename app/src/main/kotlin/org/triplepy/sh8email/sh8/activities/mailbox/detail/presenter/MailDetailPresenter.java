@@ -11,7 +11,7 @@ import org.triplepy.sh8email.sh8.data.Mail;
  */
 
 public interface MailDetailPresenter {
-    void getMail(Long pk);
+    void getMail(String nickname, Long pk);
     interface View {
         void setupMail(Mail mail);
     }

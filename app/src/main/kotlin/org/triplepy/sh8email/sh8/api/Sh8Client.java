@@ -50,7 +50,7 @@ public class Sh8Client {
         return emailService.getMailBox(id);
     }
 
-    public Observable<Mail> getMailDetail(Long pk){
-        return  emailService.getMailDetail(pk);
+    public Observable<Mail> getMailDetail(String nickname, Long pk){
+        return  emailService.getMailDetail(nickname, pk);
     }
 }

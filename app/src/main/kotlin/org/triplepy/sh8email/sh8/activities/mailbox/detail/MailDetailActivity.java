@@ -50,8 +50,9 @@ public class MailDetailActivity extends BaseActivity implements MailDetailPresen
         DaggerMailDetailComponent.builder().mailDetailModule(new MailDetailModule(this)).build().inject(this);
         ButterKnife.bind(this);
 
+        String nickname = getIntent().getExtras().getString(Constants.EXTRAS_NICKNAME);
         Long mailSrl = getIntent().getExtras().getLong(Constants.EXTRAS_MAIL_SRL);
-        presenter.getMail(mailSrl);
+        presenter.getMail(nickname, mailSrl);
     }
 
     @Override

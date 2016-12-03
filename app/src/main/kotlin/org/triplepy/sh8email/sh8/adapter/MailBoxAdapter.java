@@ -63,6 +63,7 @@ public class MailBoxAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             vh.root.setOnClickListener(v -> {
                 Intent intent = new Intent(context, MailDetailActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra(Constants.EXTRAS_NICKNAME, mail.getRecipient());
                 intent.putExtra(Constants.EXTRAS_MAIL_SRL, mail.getPk());
                 context.startActivity(intent);
             });

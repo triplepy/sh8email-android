@@ -13,4 +13,6 @@ public class Constants {
     public static String PREF_COOKIE= "pref_cookie";
 
     public static String EXTRAS_MAIL_SRL = "extras_mail_srl";
+
+    public static String EXTRAS_NICKNAME = "extras_nickname";
 }

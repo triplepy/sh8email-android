@@ -26,8 +26,8 @@ public class MailDetailPresenterImpl implements MailDetailPresenter{
     }
 
     @Override
-    public void getMail(Long pk) {
-        client.getMailDetail(pk)
+    public void getMail(String nickname, Long pk) {
+        client.getMailDetail(nickname, pk)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(mail -> {
