@@ -39,9 +39,9 @@ import rx.Observable;
  */
 
 public interface EmailService {
-    @POST("mail/{recipient}/list/")
-    Observable<ArrayList<Mail>> getMailBox(@Path("recipient") String recipient);
+    @POST("mail/{nickname}/list/")
+    Observable<ArrayList<Mail>> getMailBox(@Path("nickname") String nickname);
 
-    @GET("mail/{pk}/")
-    Observable<Mail> getMailDetail(@Path("pk")Long pk);
+    @GET("mail/{nickname}/{mail_pk}/")
+    Observable<Mail> getMailDetail(@Path("nickname")String nickname,@Path("mail_pk")Long mailPk);
 }
