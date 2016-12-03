@@ -14,12 +14,12 @@ package org.triplepy.sh8email.sh8.data;
 public class Mail {
     private Long pk;
     private String recipient;
-    private String secret_code;
+    private String secretCode;
     private String sender;
     private String subject;
     private String contents;
-    private String recip_date;
-    private Boolean is_read;
+    private String recipDate;
+    private Boolean isRead;
 
     public Long getPk() {
         return pk;
@@ -37,12 +37,12 @@ public class Mail {
         this.recipient = recipient;
     }
 
-    public String getSecret_code() {
-        return secret_code;
+    public String getSecretCode() {
+        return secretCode;
     }
 
-    public void setSecret_code(String secret_code) {
-        this.secret_code = secret_code;
+    public void setSecretCode(String secretCode) {
+        this.secretCode = secretCode;
     }
 
     public String getSender() {
@@ -69,19 +69,19 @@ public class Mail {
         this.contents = contents;
     }
 
-    public String getRecip_date() {
-        return recip_date;
+    public String getRecipDate() {
+        return recipDate;
     }
 
-    public void setRecip_date(String recip_date) {
-        this.recip_date = recip_date;
+    public void setRecipDate(String recipDate) {
+        this.recipDate = recipDate;
     }
 
-    public Boolean getIs_read() {
-        return is_read;
+    public Boolean getRead() {
+        return isRead;
     }
 
-    public void setIs_read(Boolean is_read) {
-        this.is_read = is_read;
+    public void setRead(Boolean read) {
+        isRead = read;
     }
 }
