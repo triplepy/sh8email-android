@@ -13,6 +13,7 @@ import android.widget.TextView;
 import org.triplepy.sh8email.sh8.Constants;
 import org.triplepy.sh8email.sh8.R;
 import org.triplepy.sh8email.sh8.activities.mailbox.detail.MailDetailActivity;
+import org.triplepy.sh8email.sh8.activities.mailbox.secretcode.SecretCodeActivity;
 import org.triplepy.sh8email.sh8.data.Mail;
 import org.triplepy.sh8email.sh8.utils.TimeUtil;
 
@@ -55,9 +56,16 @@ public class MailBoxAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         vh.mail_list_sender.setText(mail.getSender());
         vh.mail_list_date.setText(textTime);
 
-        if (mail.getSecretCode() != null) {
+        if (mail.isSecret()) {
             vh.mail_list_locked.setVisibility(View.VISIBLE);
             vh.mail_list_title.setText("이 메일은 암호로 보호된 메일입니다.");
+            vh.root.setOnClickListener(v -> {
+                Intent intent = new Intent(context, SecretCodeActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra(Constants.EXTRAS_NICKNAME, mail.getRecipient());
+                intent.putExtra(Constants.EXTRAS_MAIL_SRL, mail.getPk());
+                context.startActivity(intent);
+            });
         } else {
             vh.mail_list_locked.setVisibility(View.GONE);
             vh.root.setOnClickListener(v -> {
@@ -69,6 +77,7 @@ public class MailBoxAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             });
         }
     }
+
 
     @Override
     public int getItemCount() {

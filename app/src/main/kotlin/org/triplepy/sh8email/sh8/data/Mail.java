@@ -20,6 +20,7 @@ public class Mail {
     private String contents;
     private String recipDate;
     private Boolean isRead;
+    private Boolean isSecret;
 
     public Long getPk() {
         return pk;
@@ -77,11 +78,20 @@ public class Mail {
         this.recipDate = recipDate;
     }
 
-    public Boolean getRead() {
+    public Boolean isRead() {
         return isRead;
     }
 
     public void setRead(Boolean read) {
         isRead = read;
     }
+
+    public Boolean isSecret() {
+        return isSecret;
+    }
+
+    public void setSecret(Boolean isSecret) {
+        this.isSecret = isSecret;
+    }
+
 }
