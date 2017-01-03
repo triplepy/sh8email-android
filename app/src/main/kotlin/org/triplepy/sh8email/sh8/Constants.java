@@ -15,4 +15,6 @@ public class Constants {
     public static String EXTRAS_MAIL_SRL = "extras_mail_srl";
 
     public static String EXTRAS_NICKNAME = "extras_nickname";
+
+    public static final String EXTRAS_SECRET_CODE = "secret_code";
 }

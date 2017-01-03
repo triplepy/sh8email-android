@@ -28,6 +28,8 @@
             android:label="@string/mail_list"/>
         <activity android:name=".activities.mailbox.detail.MailDetailActivity" />
 
+        <activity android:name=".activities.mailbox.secretcode.SecretCodeActivity"/>
+
         <!-- Register FCM Service -->
         <service android:name=".fcm.FCMInstanceIDService">
             <intent-filter>

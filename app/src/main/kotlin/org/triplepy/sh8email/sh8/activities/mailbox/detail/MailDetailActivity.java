@@ -54,7 +54,9 @@ public class MailDetailActivity extends BaseActivity implements MailDetailPresen
 
         String nickname = getIntent().getExtras().getString(Constants.EXTRAS_NICKNAME);
         Long mailSrl = getIntent().getExtras().getLong(Constants.EXTRAS_MAIL_SRL);
-        presenter.getMail(nickname, mailSrl);
+        String secretCode = getIntent().getExtras().getString(Constants.EXTRAS_SECRET_CODE);
+
+        presenter.getMail(nickname, mailSrl, secretCode);
     }
 
     @Override

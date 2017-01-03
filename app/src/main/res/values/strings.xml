@@ -14,4 +14,6 @@
     <string name="time_month_ago">달 전</string>
     <string name="time_year_ago">년 전</string>
     <string name="time_some_ago">언젠가</string>
+
+    <string name="secret_code">Secret Code</string>
 </resources>
